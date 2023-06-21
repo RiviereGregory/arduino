@@ -5,6 +5,14 @@ int IRpin = 10;
 int pinLed = 4;
 int pinLed3 = 3;
 
+// Schéma cablage
+// Recepteur IR
+//     GND  _|/ 10
+//           |\ 5v
+//
+// LED 1   GND - R330 Ohm - |>|- 4
+// LED 2   GND - R330 Ohm - |>|- 3
+
 IRrecv irrecv(IRpin);
 decode_results results;
 
