@@ -22,19 +22,32 @@ void loop() {
     Serial.println(val, HEX);
     irrecv.resume();
   }
-
+  // Pour determiner les val il faut mettre l'ide arduino en moniteur série
+  // teleco 2
   if (val == 0xFF18E7) {
     digitalWrite(pinLed, HIGH);
   }
+  // teleco 1
   if (val == 0xFF30CF) {
     digitalWrite(pinLed, LOW);
   }
-
+  // teleco 3
   if (val == 0xFF7A85) {
     digitalWrite(pinLed3, HIGH);
   }
+  // teleco 6
   if (val == 0xFF5AA5) {
     digitalWrite(pinLed3, LOW);
+  }
+  // teleco 0
+  if (val == 0xFF6897) {
+    digitalWrite(pinLed, LOW);
+    digitalWrite(pinLed3, LOW);
+  }
+  // teleco 9
+  if (val == 0xFF52AD) {
+    digitalWrite(pinLed, HIGH);
+    digitalWrite(pinLed3, HIGH);
   }
 
 }
